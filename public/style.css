@@ -1,0 +1,431 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #fff; /* Background color */
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Styling */
+.navbar-logo img {
+  width: 50px; /* Adjust logo size */
+  height: auto;
+}
+
+/* Menu Styling */
+.navbar-menu {
+  position: relative;
+}
+
+.dropdown {
+  position: relative;
+  display: block;
+}
+
+.dropbtn {
+  background-color: #f9f9f9; /* Button background */
+  color: black;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* .dropbtn:hover {
+  background-color: #555;
+} */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  border-radius: 4px;
+  /* padding: 10px 0; */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #444;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #333;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  /* background-color: #555; */
+  border-bottom: solid#444;
+}
+
+/* Ensure dropdown content stays open on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Search Button Styling */
+.navbar-search .search-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-search .search-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Search Overlay Styling */
+.search-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  backdrop-filter: blur(10px); /* Blur effect */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.search-box {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-box .close-search {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+  .search-box input {
+      width: 200px;
+  }
+}
+
+
+
+/* Hero Section Styles */
+/* Slider Container */
+.slider {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 472px; /* Full viewport height */
+}
+
+/* Slides Container */
+.slides {
+  box-sizing: border-box;
+  position: relative;
+  padding: 100px 0;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Ensure the slides stack horizontally */
+}
+
+/* Each Slide */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Start invisible */
+  transition: opacity 1s ease; /* Smooth fade transition */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Make sure the active slide is visible */
+.slide.active {
+  opacity: 1;
+}
+
+/* Slide Image */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container without distortion */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background covering the entire image */
+}
+
+
+/* Caption Styling */
+.caption {
+  position: absolute;
+  width: 100%;
+  max-height: 472px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background covering the entire image */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in width/height */
+  z-index:2; /* Ensure caption is above the image */
+}
+
+/* Heading (H3) Styling */
+.caption h3 {
+  font-size: 2em;
+  margin: 0; /*No margins*/
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Line between heading and paragraph */
+.caption .line {
+  padding: 1px;
+  background-color: #cbcbcb;
+  margin: auto;
+  width: 200px;
+}
+
+/* Paragraph Styling */
+.caption p {
+  font-size: 1.2em;
+  margin: 3rem 0 0 0; /* No margins */
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+  max-width: 570px;
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 50px;
+}
+
+
+
+/* Button Styling */
+.caption .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Space between paragraph and button */
+  margin-bottom: 120px;
+}
+
+.caption .btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* Responsive Adjustment */
+@media (max-width: 550px) {
+  .caption .btn input {
+    margin-top: 20px; /* Space between paragraph and button */
+    margin-bottom: 150px;
+  }
+}
+
+
+
+
+
+
+/* Radio Button Navigation */
+.radio-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px; /* Space between the buttons */
+  z-index: 3; /* Ensure they are visible over the images */
+}
+
+.radio-btn {
+  width: 15px;
+  height: 15px;
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.radio-btn.active,
+.radio-btn:hover {
+  background-color: white;
+}
+/* About Section Styling */
+.about-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Title Styling */
+.about-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Description Text Styling */
+.about-description {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #666;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card Container Styling */
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  
+}
+
+/* Individual Card Styling */
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  
+}
+
+.card h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #333;
+  
+}
+
+.card p {
+  font-size: 1em;
+  color: #666;
+}
+
+
+.card-1 {
+  display: block;
+  margin: auto;
+  max-width: 100px;
+  height: 100px;
+  border: solid;
+  border-radius: 50%;
+}
+.icon {
+  margin: auto;
+  padding-top:23px;
+}
+.card:hover .card-1 {
+  background-color:  #231F20;
+
+}
+
+.card:hover .icon #path1 {
+fill: #fff;
+}
+
+.card:hover  #path2 {
+  fill:#fff;
+  }
+  
+
+
+
+
+
+/* Content Section Styles */
+.content-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.content-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.content-section p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+
+@media (max-width: 460px) {
+  
